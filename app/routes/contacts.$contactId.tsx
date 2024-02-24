@@ -1,6 +1,5 @@
-import { Form } from "@remix-run/react";
+import { Form, Outlet } from "@remix-run/react";
 import type { FunctionComponent } from "react";
-
 import type { ContactRecord } from "../data";
 
 export default function Contact() {
@@ -21,7 +20,6 @@ export default function Contact() {
           src={contact.avatar}
         />
       </div>
-
       <div>
         <h1>
           {contact.first || contact.last ? (
@@ -64,6 +62,7 @@ export default function Contact() {
             <button type="submit">Delete</button>
           </Form>
         </div>
+        <Outlet />
       </div>
     </div>
   );
